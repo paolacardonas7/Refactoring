@@ -16,4 +16,6 @@ public class Operacion {
     public static int multipliqueLosValores(int x, int y) {
         return x * y;
     }
+
+    public static int dividaLosValores(int x, int y){ return x/y;}
 }
