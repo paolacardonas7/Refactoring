@@ -78,4 +78,28 @@ public class OperacionTest {
         //Assert
         Assert.assertEquals(8, resultado);
     }
+
+
+    @Test
+    public void debeRetornar7CuandoSume2ymediocon4ymedio(){
+        //Arrange
+        double x = 2.5;
+        double y = 4.5;
+        //Act
+        double resultado = Operacion.sumaDecimales(x,y);
+        //Assert
+        Assert.assertEquals(7, resultado,0);
+    }
+
+    @Test
+    public void debeRetornar9ymedioCuandoSume5ymediocon4(){
+        //Arrange
+        double x = 5.5;
+        double y = 4;
+        //Act
+        double resultado = Operacion.sumaDecimales(x,y);
+        //Assert
+        Assert.assertEquals(9.5, resultado, 0);
+    }
+
 }
