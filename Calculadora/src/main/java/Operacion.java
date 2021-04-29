@@ -18,4 +18,6 @@ public class Operacion {
     }
 
     public static int dividaLosValores(int x, int y){ return x/y;}
+
+    public static double sumaDecimales(double x, double y){ return x+y;}
 }
