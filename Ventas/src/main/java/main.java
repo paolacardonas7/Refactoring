@@ -11,7 +11,7 @@ public class main {
 
         while (continuarCompra) {
 
-            proSel = getProSel(entradaEscaner);
+            proSel = Selector.getProSel(entradaEscaner);
             System.out.println("Indique cantidad: ");
             cantidad = Integer.parseInt(entradaEscaner.nextLine());
             if (productoSeleccionado == 1) {
@@ -21,7 +21,7 @@ public class main {
             } else {
                 break;
             }
-            selFin = getSelFin(entradaEscaner);
+            selFin = Selector.getSelFin(entradaEscaner);
             if (selFin == 1) {
                 initTrans = true;
             } else if (selFin == 2) {
@@ -37,19 +37,4 @@ public class main {
         System.out.println("Valor a pagar: " + totalVenta);
     }
 
-    private static int getSelFin(Scanner entradaEscaner) {
-        int selFin;
-        System.out.println("Desea finalizar o agregar otro producto ?");
-        System.out.println("1. Agregar \n2. Finalizar");
-        selFin = Integer.parseInt(entradaEscaner.nextLine());
-        return selFin;
-    }
-
-    private static int getProSel(Scanner entradaEscaner) {
-        int proSel;
-        System.out.println("Seleccione producto: ");
-        System.out.println("1. Perro \n2. Hamburguesa");
-        proSel = Integer.parseInt(entradaEscaner.nextLine());
-        return proSel;
-    }
 }
