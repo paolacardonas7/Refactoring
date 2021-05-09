@@ -11,9 +11,7 @@ public class main {
 
         while (continuarCompra) {
 
-            System.out.println("Seleccione producto: ");
-            System.out.println("1. Perro \n2. Hamburguesa");
-            productoSeleccionado = Integer.parseInt(entradaEscaner.nextLine());
+            proSel = getProSel(entradaEscaner);
             System.out.println("Indique cantidad: ");
             cantidad = Integer.parseInt(entradaEscaner.nextLine());
             if (productoSeleccionado == 1) {
@@ -23,13 +21,11 @@ public class main {
             } else {
                 break;
             }
-            System.out.println("Desea finalizar o agregar otro producto ?");
-            System.out.println("1. Agregar \n2. Finalizar");
-            operacionSiguiente = Integer.parseInt(entradaEscaner.nextLine());
-            if (operacionSiguiente == 1) {
-                continuarCompra = true;
-            } else if (operacionSiguiente == 2) {
-                continuarCompra = false;
+            selFin = getSelFin(entradaEscaner);
+            if (selFin == 1) {
+                initTrans = true;
+            } else if (selFin == 2) {
+                initTrans = false;
             } else {
                 break;
             }
@@ -39,5 +35,21 @@ public class main {
         totalPerro = precioPerro * cantidadPerro;
         totalVenta = totalHamburguesa + totalPerro;
         System.out.println("Valor a pagar: " + totalVenta);
+    }
+
+    private static int getSelFin(Scanner entradaEscaner) {
+        int selFin;
+        System.out.println("Desea finalizar o agregar otro producto ?");
+        System.out.println("1. Agregar \n2. Finalizar");
+        selFin = Integer.parseInt(entradaEscaner.nextLine());
+        return selFin;
+    }
+
+    private static int getProSel(Scanner entradaEscaner) {
+        int proSel;
+        System.out.println("Seleccione producto: ");
+        System.out.println("1. Perro \n2. Hamburguesa");
+        proSel = Integer.parseInt(entradaEscaner.nextLine());
+        return proSel;
     }
 }
